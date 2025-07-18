@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rides | Carpooling</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+<h1>Ride Management</h1>
+
+<section>
+    <h2>Offer a Ride</h2>
+    <form id="offerRideForm">
+        <input type="text" id="from" placeholder="From" required />
+        <input type="text" id="to" placeholder="To" required />
+        <input type="date" id="date" required />
+        <input type="time" id="time" required />
+        <input type="number" id="seats" placeholder="Seats Available" required />
+        <button type="submit">Offer Ride</button>
+    </form>
+</section>
+
+<section>
+    <h2>Search for Rides</h2>
+    <form id="searchForm">
+        <input type="text" id="searchFrom" placeholder="From" required />
+        <input type="text" id="searchTo" placeholder="To" required />
+        <button type="submit">Search</button>
+    </form>
+    <ul id="searchResults"></ul>
+</section>
+
+<button onclick="window.location.href='dashboard.html'">Back to Dashboard</button>
+
+<script src="ride.js"></script>
+</body>
+</html>

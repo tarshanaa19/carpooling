@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarPool - Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <h2>🚗 CarPool</h2>
+    </div>
+
+
+    <div class="nav-menu">
+      <a href="dashboard.html" class="nav-link active">
+        <i class="fas fa-tachometer-alt"></i>
+        Dashboard
+      </a>
+      <a href="find-ride.html" class="nav-link">
+        <i class="fas fa-search"></i>
+        Find Ride
+      </a>
+      <a href="my-rides.html" class="nav-link">
+        <i class="fas fa-car"></i>
+        My Rides
+      </a>
+      <a href="#" class="nav-link">
+        <i class="fas fa-envelope"></i>
+        Messages
+      </a>
+
+    </div>
+
+
+    <a href="profile.html" class="nav-user" style="text-decoration: none; color: inherit;">
+      <span class="user-name">Tarshanaa</span>
+      <div class="user-avatar">TV</div>
+    </a>
+  </div>
+</nav>
+
+
+<main class="main-content">
+  <div class="dashboard-container">
+
+    <!-- Quick Actions -->
+    <section class="quick-actions">
+      <h3>Quick Actions</h3>
+      <div class="action-buttons">
+        <button class="btn btn-primary" id="findRideBtn">
+          <span class="btn-icon">🔍</span>
+          Find a Ride
+        </button>
+        <button class="btn btn-secondary" id="offerRideBtn">
+          <span class="btn-icon">🚗</span>
+          Offer a Ride
+        </button>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <h3>Your Stats</h3>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">🚗</div>
+          <div class="stat-info">
+            <h4>23</h4>
+            <p>Rides Completed</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">💸</div>
+          <div class="stat-info">
+            <h4>934</h4>
+            <p>Money Saved</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🌱</div>
+          <div class="stat-info">
+            <h4>12kg</h4>
+            <p>CO2 Saved</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⭐</div>
+          <div class="stat-info">
+            <h4>4.8</h4>
+            <p>Rating</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="recent-rides">
+      <h3>Recent Rides</h3>
+      <div class="rides-list" id="ridesList">
+        <div class="ride-card">
+          <div class="ride-info">
+            <div class="ride-route">
+              <span class="from">Downtown</span>
+              <span class="arrow">→</span>
+              <span class="to">Airport</span>
+            </div>
+            <div class="ride-details">
+              <span class="ride-date">Today, 2:30 PM</span>
+              <span class="ride-status status-confirmed">Confirmed</span>
+            </div>
+          </div>
+          <div class="ride-driver">
+            <div class="driver-avatar">PR</div>
+            <span class="driver-name">Prag</span>
+          </div>
+        </div>
+
+        <div class="ride-card">
+          <div class="ride-info">
+            <div class="ride-route">
+              <span class="from">Mall</span>
+              <span class="arrow">→</span>
+              <span class="to">University</span>
+            </div>
+            <div class="ride-details">
+              <span class="ride-date">Yesterday, 8:00 AM</span>
+              <span class="ride-status status-completed">Completed</span>
+            </div>
+          </div>
+          <div class="ride-driver">
+            <div class="driver-avatar">AT</div>
+            <span class="driver-name">Atch.</span>
+          </div>
+        </div>
+
+        <div class="ride-card">
+          <div class="ride-info">
+            <div class="ride-route">
+              <span class="from">Home</span>
+              <span class="arrow">→</span>
+              <span class="to">Office</span>
+            </div>
+            <div class="ride-details">
+              <span class="ride-date">Jul 15, 9:00 AM</span>
+              <span class="ride-status status-completed">Completed</span>
+            </div>
+          </div>
+          <div class="ride-driver">
+            <div class="driver-avatar">AK</div>
+            <span class="driver-name">Akhila</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="available-rides">
+      <h3>Available Rides Near You</h3>
+      <div class="rides-list" id="availableRidesList">
+        <div class="ride-card available">
+          <div class="ride-info">
+            <div class="ride-route">
+              <span class="from">City Center</span>
+              <span class="arrow">→</span>
+              <span class="to">Beach</span>
+            </div>
+            <div class="ride-details">
+              <span class="ride-date">Tomorrow, 3:00 PM</span>
+              <span class="ride-price">230</span>
+            </div>
+          </div>
+          <div class="ride-driver">
+            <div class="driver-avatar">EJ</div>
+            <span class="driver-name">Elvina</span>
+            <button class="btn btn-small">Join</button>
+          </div>
+        </div>
+
+        <div class="ride-card available">
+          <div class="ride-info">
+            <div class="ride-route">
+              <span class="from">Airport</span>
+              <span class="arrow">→</span>
+              <span class="to">Downtown</span>
+            </div>
+            <div class="ride-details">
+              <span class="ride-date">Tomorrow, 6:30 PM</span>
+              <span class="ride-price">300</span>
+            </div>
+          </div>
+          <div class="ride-driver">
+            <div class="driver-avatar">EM</div>
+            <span class="driver-name">Ely</span>
+            <button class="btn btn-small">Join</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+</body>
+</html>

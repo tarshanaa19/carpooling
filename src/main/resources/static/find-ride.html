@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Ride - CarPool</title>
+    <link rel="stylesheet" href="find-ride.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+
+                <span>🚗CarPool</span>
+            </div>
+            <nav class="nav">
+                <a href="dashboard.html" class="nav-link">
+                    <i class="fas fa-tachometer-alt"></i>
+                    Dashboard
+                </a>
+                <a href="#" class="nav-link active">
+                    <i class="fas fa-search"></i>
+                    Find Ride
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fas fa-car"></i>
+                    My Rides
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fas fa-envelope"></i>
+                    Messages
+                </a>
+
+            </nav>
+            <div class="user-info">
+                <span>Tarshanaa</span>
+                <div class="avatar">TV</div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<main class="main">
+    <div class="container">
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="search-card">
+                <h2>Find Your Perfect Ride</h2>
+                <form class="search-form" id="searchForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="from">From</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <input type="text" id="from" placeholder="Enter pickup location" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="to">To</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <input type="text" id="to" placeholder="Enter destination" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-calendar"></i>
+                                <input type="date" id="date" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Time</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-clock"></i>
+                                <input type="time" id="time" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="passengers">Passengers</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-users"></i>
+                                <select id="passengers">
+                                    <option value="1">1 Passenger</option>
+                                    <option value="2">2 Passengers</option>
+                                    <option value="3">3 Passengers</option>
+                                    <option value="4">4 Passengers</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" id="filtersBtn">
+                            <i class="fas fa-filter"></i>
+                            Filters
+                        </button>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-search"></i>
+                            Search Rides
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+
+        <section class="filters-section" id="filtersSection">
+            <div class="filters-card">
+                <h3>Filter Options</h3>
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label>Price Range</label>
+                        <div class="price-range">
+                            <input type="range" id="priceRange" min="0" max="1000" value="500">
+                            <div class="price-display">₹0 - ₹<span id="priceValue">500</span></div>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label>Vehicle Type</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="Indigo" checked>
+                                <span>Indigo</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="suv">
+                                <span>SUV</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="Sedan">
+                                <span>Sedan</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label>Driver Rating</label>
+                        <div class="rating-filter">
+                            <div class="stars">
+                                <i class="fas fa-star active" data-rating="1"></i>
+                                <i class="fas fa-star active" data-rating="2"></i>
+                                <i class="fas fa-star active" data-rating="3"></i>
+                                <i class="fas fa-star active" data-rating="4"></i>
+                                <i class="fas fa-star" data-rating="5"></i>
+                            </div>
+                            <span>4+ Stars</span>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label>Preferences</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="non-smoking">
+                                <span>Non-smoking</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="ac">
+                                <span>AC Available</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="music">
+                                <span>Music Allowed</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="results-section" id="resultsSection">
+            <div class="results-header">
+                <h3>Available Rides</h3>
+                <div class="sort-options">
+                    <select id="sortBy">
+                        <option value="time">Sort by Time</option>
+                        <option value="price">Sort by Price</option>
+                        <option value="rating">Sort by Rating</option>
+                    </select>
+                </div>
+            </div>
+            <div class="rides-list" id="ridesList">
+
+            </div>
+        </section>
+    </div>
+</main>
+
+
+<div class="modal" id="bookingModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Book This Ride</h3>
+            <button class="close-btn" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="ride-summary" id="rideSummary">
+                <!-- Ride summary will be populated by JavaScript -->
+            </div>
+            <div class="booking-form">
+                <div class="form-group">
+                    <label for="pickupPoint">Pickup Point</label>
+                    <input type="text" id="pickupPoint" placeholder="Enter specific pickup location">
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" id="phoneNumber" placeholder="Your contact number">
+                </div>
+                <div class="form-group">
+                    <label for="notes">Additional Notes</label>
+                    <textarea id="notes" placeholder="Any special requirements or notes for the driver"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-secondary" id="cancelBooking">Cancel</button>
+            <button class="btn-primary" id="confirmBooking">Confirm Booking</button>
+        </div>
+    </div>
+</div>
+
+<script src="find-ride.js"></script>
+</body>
+</html>

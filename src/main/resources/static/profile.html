@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - RideShare</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1>My Profile</h1>
+        <button class="edit-btn" onclick="toggleEdit()">Edit Profile</button>
+    </header>
+
+    <div class="profile-content">
+        <div class="profile-card">
+            <div class="profile-image-section">
+                <img src="https://via.placeholder.com/120/4CAF50/white?text=JD" alt="Profile Picture" class="profile-image">
+                <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                <button class="change-photo-btn" onclick="changePhoto()">Change Photo</button>
+            </div>
+
+            <div class="profile-info">
+                <div class="info-group">
+                    <label>Name</label>
+                    <input type="text" id="name" value="tarshanaa" readonly>
+                </div>
+                <div class="info-group">
+                    <label>Email</label>
+                    <input type="email" id="email" value="tarshanaa19@email.com" readonly>
+                </div>
+                <div class="info-group">
+                    <label>Phone</label>
+                    <input type="tel" id="phone" value="6282856755" readonly>
+                </div>
+                <div class="info-group">
+                    <label>Location</label>
+                    <input type="text" id="location" value="Idukki" readonly>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <div class="stat-card">
+                <h3>23</h3>
+                <p>Rides Completed</p>
+            </div>
+            <div class="stat-card">
+                <h3>4.8</h3>
+                <p>Rating</p>
+            </div>
+            <div class="stat-card">
+                <h3>2</h3>
+                <p>Years Active</p>
+            </div>
+        </div>
+
+        <div class="vehicle-section">
+            <h2>Vehicle Information</h2>
+            <div class="vehicle-card">
+                <div class="info-group">
+                    <label>Make & Model</label>
+                    <input type="text" id="carModel" value="Sedan" readonly>
+                </div>
+                <div class="info-group">
+                    <label>License Plate</label>
+                    <input type="text" id="licensePlate" value="ABC-1234" readonly>
+                </div>
+                <div class="info-group">
+                    <label>Color</label>
+                    <input type="text" id="carColor" value="Silver" readonly>
+                </div>
+                <div class="info-group">
+                    <label>Seats Available</label>
+                    <select id="seats" disabled>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3" selected>3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="recent-rides">
+            <h2>Recent Rides</h2>
+            <div class="ride-item">
+                <div class="ride-info">
+                    <h4>Park → Airport</h4>
+                    <p>March 15, 2025 • 2 passengers</p>
+                </div>
+                <div class="ride-status completed">Completed</div>
+            </div>
+            <div class="ride-item">
+                <div class="ride-info">
+                    <h4>Mall → University</h4>
+                    <p>March 12, 2025 • 1 passenger</p>
+                </div>
+                <div class="ride-status completed">Completed</div>
+            </div>
+            <div class="ride-item">
+                <div class="ride-info">
+                    <h4>Home → Office</h4>
+                    <p>March 10, 2025 • 3 passengers</p>
+                </div>
+                <div class="ride-status completed">Completed</div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn primary" id="saveBtn" onclick="saveProfile()" style="display: none;">Save Changes</button>
+            <button class="btn secondary" id="cancelBtn" onclick="cancelEdit()" style="display: none;">Cancel</button>
+            <button class="btn secondary" onclick="logout()">Logout</button>
+        </div>
+    </div>
+</div>
+
+<script src="profile.js"></script>
+</body>
+</html>
