@@ -2,12 +2,13 @@ let isEditMode = false;
 let originalData = {};
 
 document.addEventListener('DOMContentLoaded', function () {
+    loadProfileFromStorage();
+    loadProfileImage();
     storeOriginalData();
     document.getElementById('imageUpload').addEventListener('change', handleImageUpload);
-    document.getElementById('phone').addEventListener('input', handlePhoneAutoFormat); // Fixed position
+    document.getElementById('phone').addEventListener('input', handlePhoneAutoFormat);
     addInputValidation();
 });
-
 
 function storeOriginalData() {
     originalData = {
@@ -20,6 +21,29 @@ function storeOriginalData() {
         carColor: document.getElementById('carColor').value,
         seats: document.getElementById('seats').value
     };
+    localStorage.setItem('userProfile', JSON.stringify(originalData));
+}
+
+function loadProfileFromStorage() {
+    const savedProfile = localStorage.getItem('userProfile');
+    if (savedProfile) {
+        const data = JSON.parse(savedProfile);
+        document.getElementById('name').value = data.name || '';
+        document.getElementById('email').value = data.email || '';
+        document.getElementById('phone').value = data.phone || '';
+        document.getElementById('location').value = data.location || '';
+        document.getElementById('carModel').value = data.carModel || '';
+        document.getElementById('licensePlate').value = data.licensePlate || '';
+        document.getElementById('carColor').value = data.carColor || '';
+        document.getElementById('seats').value = data.seats || '';
+    }
+}
+
+function loadProfileImage() {
+    const savedImage = localStorage.getItem('profileImage');
+    if (savedImage) {
+        document.querySelector('.profile-image').src = savedImage;
+    }
 }
 
 function toggleEdit() {
@@ -35,10 +59,8 @@ function toggleEdit() {
         editBtn.disabled = true;
         saveBtn.style.display = 'inline-block';
         cancelBtn.style.display = 'inline-block';
-
         inputs.forEach(input => input.removeAttribute('readonly'));
         select.removeAttribute('disabled');
-
         document.body.classList.add('edit-mode');
         document.getElementById('name').focus();
     } else {
@@ -46,10 +68,8 @@ function toggleEdit() {
         editBtn.disabled = false;
         saveBtn.style.display = 'none';
         cancelBtn.style.display = 'none';
-
         inputs.forEach(input => input.setAttribute('readonly', 'readonly'));
         select.setAttribute('disabled', 'disabled');
-
         document.body.classList.remove('edit-mode');
     }
 }
@@ -104,6 +124,7 @@ function handleImageUpload(event) {
         const reader = new FileReader();
         reader.onload = function (e) {
             document.querySelector('.profile-image').src = e.target.result;
+            localStorage.setItem('profileImage', e.target.result);
             showNotification('Profile picture updated!', 'success');
         };
         reader.readAsDataURL(file);
@@ -219,6 +240,7 @@ function showNotification(message, type) {
 function logout() {
     if (confirm('Are you sure you want to logout?')) {
         localStorage.removeItem('userProfile');
+        localStorage.removeItem('profileImage');
         sessionStorage.clear();
         showNotification('Logging out...', 'success');
         setTimeout(() => {

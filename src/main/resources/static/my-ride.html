@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Rides - CarPool</title>
+    <link rel="stylesheet" href="my-ride.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>My Rides</h1>
+        <div class="header-actions">
+            <button id="exportBtn" class="btn btn-secondary">Export to CSV</button>
+            <div class="user-role">
+                <label>
+                    <input type="checkbox" id="driverMode" checked>
+                    Driver Mode
+                </label>
+            </div>
+        </div>
+    </header>
+
+
+    <div id="earningsSection" class="earnings-card">
+        <h2>Earnings Overview</h2>
+        <div class="earnings-grid">
+            <div class="earning-item">
+                <span class="label">Total Earnings</span>
+                <span class="value" id="totalEarnings">₹0.00</span>
+            </div>
+            <div class="earning-item">
+                <span class="label">This Month</span>
+                <span class="value" id="monthEarnings">₹0.00</span>
+            </div>
+            <div class="earning-item">
+                <span class="label">This Week</span>
+                <span class="value" id="weekEarnings">₹0.00</span>
+            </div>
+            <div class="earning-item">
+                <span class="label">Average per Ride</span>
+                <span class="value" id="avgEarnings">₹0.00</span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="filters-section">
+        <div class="filter-group">
+            <label for="dateFrom">From Date:</label>
+            <input type="date" id="dateFrom">
+        </div>
+        <div class="filter-group">
+            <label for="dateTo">To Date:</label>
+            <input type="date" id="dateTo">
+        </div>
+        <div class="filter-group">
+            <label for="statusFilter">Status:</label>
+            <select id="statusFilter">
+                <option value="">All Status</option>
+                <option value="completed">Completed</option>
+                <option value="cancelled">Cancelled</option>
+                <option value="upcoming">Upcoming</option>
+                <option value="in-progress">In Progress</option>
+            </select>
+        </div>
+        <button id="applyFilters" class="btn btn-primary">Apply Filters</button>
+        <button id="clearFilters" class="btn btn-secondary">Clear</button>
+    </div>
+
+
+    <div class="rides-container">
+        <div id="ridesCount" class="rides-count">Total Rides: 0</div>
+        <div id="ridesList" class="rides-list">
+
+        </div>
+    </div>
+
+
+    <div id="noteModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Add Ride Note</h3>
+            <textarea id="noteText" placeholder="Enter your note or reminder..."></textarea>
+            <div class="modal-actions">
+                <button id="saveNote" class="btn btn-primary">Save Note</button>
+                <button id="cancelNote" class="btn btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="my-ride.js"></script>
+</body>
+</html>

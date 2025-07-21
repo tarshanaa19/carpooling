@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offer a Ride - CarPool</title>
+    <link rel="stylesheet" href="offer-ride.css">
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1>🚗 Offer a Ride</h1>
+
+    </header>
+
+    <form class="ride-form" id="offerRideForm">
+        <div class="form-section">
+            <h2>Route Details</h2>
+
+            <div class="form-group">
+                <label for="from">From</label>
+                <input type="text" id="from" name="from" placeholder="Starting location" required>
+            </div>
+
+            <div class="form-group">
+                <label for="to">To</label>
+                <input type="text" id="to" name="to" placeholder="Destination" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Time</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Ride Details</h2>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="seats">Available Seats</label>
+                    <select id="seats" name="seats" required>
+                        <option value="">Select seats</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price per seat </label>
+                    <input type="number" id="price" name="price" placeholder="0" min="0" step="0.50" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="car">Car Details</label>
+                <input type="text" id="car" name="car" placeholder="e.g., Honda Civic, Blue, ABC-123" required>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Additional Information</h2>
+
+            <div class="form-group">
+                <label for="notes">Additional Notes</label>
+                <textarea id="notes" name="notes" rows="3" placeholder="Any specific instructions, pickup points, or preferences..."></textarea>
+            </div>
+
+            <div class="preferences">
+                <h3>Preferences</h3>
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="smoking" name="preferences" value="no-smoking">
+                        <span class="checkmark"></span>
+                        No Smoking
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="pets" name="preferences" value="pets-allowed">
+                        <span class="checkmark"></span>
+                        Pets Allowed
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="music" name="preferences" value="music-ok">
+                        <span class="checkmark"></span>
+                        Music OK
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="luggage" name="preferences" value="luggage-space">
+                        <span class="checkmark"></span>
+                        Extra Luggage Space
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="button" class="btn btn-secondary" onclick="window.history.back()">Cancel</button>
+            <button type="submit" class="btn btn-primary">Offer Ride</button>
+        </div>
+    </form>
+
+    <div class="success-message" id="successMessage" style="display: none;">
+        <div class="success-content">
+            <div class="success-icon">✅</div>
+            <h3>Ride Offered Successfully!</h3>
+            <p>Your ride has been posted and is now available for booking.</p>
+            <button class="btn btn-primary" onclick="location.reload()">Offer Another Ride</button>
+        </div>
+    </div>
+</div>
+
+<script src="offer-ride.js"></script>
+</body>
+</html>

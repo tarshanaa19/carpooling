@@ -224,14 +224,14 @@ function handleSearch(e) {
 
     showLoading();
 
-    // Simulate API call delay
+
     setTimeout(() => {
         searchRides(searchParams);
     }, 1000);
 }
 
 function searchRides(params) {
-    // Filter rides based on search parameters
+
     currentRides = sampleRides.filter(ride => {
         const matchesRoute = ride.from.toLowerCase().includes(params.from.toLowerCase()) ||
             ride.to.toLowerCase().includes(params.to.toLowerCase());
