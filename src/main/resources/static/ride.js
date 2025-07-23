@@ -5,7 +5,7 @@ if (!token) {
     window.location.href = "index.html";
 }
 
-// Offer Ride
+
 document.getElementById("offerRideForm").addEventListener("submit", async function (e) {
     e.preventDefault();
 

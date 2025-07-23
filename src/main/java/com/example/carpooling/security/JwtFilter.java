@@ -30,7 +30,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
         String path = request.getRequestURI();
 
-        // ✅ Skip filtering for public endpoints
+
         if (path.startsWith("/api/auth") ||
                 path.endsWith(".html") ||
                 path.endsWith(".js") ||
@@ -53,7 +53,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
         if (email != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             if (jwtUtil.validateToken(token)) {
-                // ✅ Use your custom UserDetailsImpl via service
+
                 UserDetails userDetails = userDetailsService.loadUserByUsername(email);
 
                 UsernamePasswordAuthenticationToken authToken =

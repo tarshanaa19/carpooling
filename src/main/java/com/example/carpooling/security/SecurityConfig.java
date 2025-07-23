@@ -43,6 +43,7 @@ public class SecurityConfig {
                                 new AntPathRequestMatcher("/offer-ride.html"),
                                 new AntPathRequestMatcher("/profile.html"),
                                 new AntPathRequestMatcher("/my-ride.html"),
+                                new AntPathRequestMatcher("/message.html"),
                                 new AntPathRequestMatcher("/**/*.js"),
                                 new AntPathRequestMatcher("/**/*.css"),
                                 new AntPathRequestMatcher("/**/*.png"),

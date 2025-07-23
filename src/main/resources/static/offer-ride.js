@@ -230,7 +230,7 @@ document.getElementById('price').addEventListener('input', function(e) {
 
 
 document.getElementById('car').addEventListener('blur', function(e) {
-    // Auto-format car details
+
     let value = e.target.value.trim();
     if (value && !value.includes(',')) {
 

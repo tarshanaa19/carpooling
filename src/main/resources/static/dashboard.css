@@ -98,7 +98,7 @@ body {
     gap: 30px;
 }
 
-/* Quick Actions */
+
 .quick-actions {
     background: #fff;
     padding: 25px;
@@ -160,7 +160,7 @@ body {
     font-size: 18px;
 }
 
-/
+
 .stats-section {
     background: #fff;
     padding: 25px;
@@ -217,7 +217,7 @@ body {
     font-size: 14px;
 }
 
-/* Recent Rides & Available Rides */
+
 .recent-rides,
 .available-rides {
     background: #fff;

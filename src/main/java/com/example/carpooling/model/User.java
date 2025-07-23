@@ -16,19 +16,19 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false, unique = true) // ✅ enforce uniqueness
-    private String username; // ✅ added username
+    @Column(nullable = false, unique = true)
+    private String username;
 
-    private String role = "USER"; // Default role
+    private String role = "USER";
 
-    // 👉 Constructors
+
     public User() {
     }
 
     public User(String email, String password, String username, String role) {
         this.email = email;
         this.password = password;
-        this.username = username; // ✅ added
+        this.username = username;
         this.role = role;
     }
 
@@ -58,11 +58,11 @@ public class User {
         this.password = password;
     }
 
-    public String getUsername() { // ✅ added
+    public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) { // ✅ added
+    public void setUsername(String username) {
         this.username = username;
     }
 

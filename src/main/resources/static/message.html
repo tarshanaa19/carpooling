@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarPool - Messages</title>
+    <link rel="stylesheet" href="message.css">
+</head>
+<body>
+<div class="container">
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-left">
+                <div class="logo">
+                    🚗 <span class="logo-text">CarPool</span>
+                </div>
+            </div>
+            <div class="nav-center">
+                <a href="dashboard.html" class="nav-link"> Dashboard</a>
+                <a href="find-ride.html" class="nav-link"> Find Ride</a>
+                <a href="my-ride.html" class="nav-link"> My Rides</a>
+                <a href="message.html" class="nav-link active"> Messages</a>
+            </div>
+            <div class="nav-right">
+                <span class="user-name">Tarshanaa</span>
+                <div class="user-avatar">TV</div>
+            </div>
+        </div>
+    </nav>
+
+
+    <header class="messages-header">
+        <div class="header-content">
+            <button class="back-btn" onclick="goBack()">←</button>
+            <div class="user-info">
+                <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
+                <div class="user-details">
+                    <h3>Geetha</h3>
+                    <span class="status">Online</span>
+                </div>
+            </div>
+            <button class="menu-btn">⋮</button>
+        </div>
+    </header>
+
+
+    <div class="trip-info">
+        <div class="trip-details">
+            <span class="route">Kumily → Munnar</span>
+            <span class="date">Today, 6:00 PM</span>
+            <span class="seats">2 seats available</span>
+        </div>
+    </div>
+
+
+    <main class="messages-container">
+        <div class="messages" id="messagesContainer">
+            <div class="message received">
+                <img src="https://via.placeholder.com/32" alt="User" class="message-avatar">
+                <div class="message-content">
+                    <p>Hi! I'm interested in joining your carpool to Munnar.</p>
+                    <span class="timestamp">10:30 AM</span>
+                </div>
+            </div>
+
+            <div class="message sent">
+                <div class="message-content">
+                    <p>Great! I have 2 seats available. Where would you like to be picked up?</p>
+                    <span class="timestamp">10:32 AM</span>
+                </div>
+            </div>
+
+            <div class="message received">
+                <img src="https://via.placeholder.com/32" alt="User" class="message-avatar">
+                <div class="message-content">
+                    <p>I'm near Rose park . Is that on your route?</p>
+                    <span class="timestamp">10:35 AM</span>
+                </div>
+            </div>
+
+            <div class="message sent">
+                <div class="message-content">
+                    <p>Perfect! That's exactly on my way. I'll pick you up at 5:45 PM.</p>
+                    <span class="timestamp">10:37 AM</span>
+                </div>
+            </div>
+
+            <div class="message received">
+                <img src="https://via.placeholder.com/32" alt="User" class="message-avatar">
+                <div class="message-content">
+                    <p>Awesome! What's the cost per person?</p>
+                    <span class="timestamp">10:40 AM</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="message-input-container">
+        <div class="message-input">
+            <button class="attach-btn">📎</button>
+            <input type="text" id="messageInput" placeholder="Type a message..." class="input-field">
+            <button class="send-btn" id="sendBtn">➤</button>
+        </div>
+    </footer>
+</div>
+
+<script src="message.js"></script>
+</body>
+</html>

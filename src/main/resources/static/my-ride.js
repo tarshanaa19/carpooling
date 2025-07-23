@@ -1,4 +1,4 @@
-// Sample ride data
+
 let ridesData = [
     {
         id: 1,

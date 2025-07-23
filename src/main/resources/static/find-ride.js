@@ -149,11 +149,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initializeApp() {
-    // Set default date to today
+
     const today = new Date().toISOString().split('T')[0];
     document.getElementById('date').value = today;
 
-    // Set default time to current time + 1 hour
+
     const now = new Date();
     now.setHours(now.getHours() + 1);
     const timeString = now.toTimeString().slice(0, 5);
@@ -570,7 +570,7 @@ function handleBookingConfirmation() {
 
     showSuccessMessage('Booking confirmed! You will receive a confirmation shortly.');
 
-    // Close modal
+
     closeBookingModal();
 
 

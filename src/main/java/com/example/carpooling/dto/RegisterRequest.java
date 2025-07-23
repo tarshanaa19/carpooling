@@ -16,7 +16,7 @@ public class RegisterRequest {
 
     private String role = "USER"; // default role
 
-    // --- Getters and Setters ---
+
     public String getEmail() {
         return email;
     }
