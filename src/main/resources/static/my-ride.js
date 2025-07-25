@@ -1,4 +1,3 @@
-
 let ridesData = [
     {
         id: 1,

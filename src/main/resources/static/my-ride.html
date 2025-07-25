@@ -21,7 +21,6 @@
         </div>
     </header>
 
-
     <div id="earningsSection" class="earnings-card">
         <h2>Earnings Overview</h2>
         <div class="earnings-grid">
@@ -43,7 +42,6 @@
             </div>
         </div>
     </div>
-
 
     <div class="filters-section">
         <div class="filter-group">
@@ -68,14 +66,12 @@
         <button id="clearFilters" class="btn btn-secondary">Clear</button>
     </div>
 
-
     <div class="rides-container">
         <div id="ridesCount" class="rides-count">Total Rides: 0</div>
         <div id="ridesList" class="rides-list">
-
+            <!-- Ride entries will appear here -->
         </div>
     </div>
-
 
     <div id="noteModal" class="modal">
         <div class="modal-content">
@@ -85,11 +81,50 @@
             <div class="modal-actions">
                 <button id="saveNote" class="btn btn-primary">Save Note</button>
                 <button id="cancelNote" class="btn btn-secondary">Cancel</button>
+
+                <!-- Added Feedback Button -->
+                <button class="btn btn-secondary" onclick="window.location.href='feedback.html'">Feedback</button>
+
             </div>
         </div>
     </div>
 </div>
 
+<div id="feedbackModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeFeedbackModal()">&times;</span>
+        <h3>Ride Feedback</h3>
+        <form id="feedbackForm">
+            <label>1. Was the ride comfortable?</label><br/>
+            <input type="radio" name="q1" value="Yes" required> Yes
+            <input type="radio" name="q1" value="No"> No<br/><br/>
+
+            <label>2. Was the driver punctual?</label><br/>
+            <input type="radio" name="q2" value="Yes" required> Yes
+            <input type="radio" name="q2" value="No"> No<br/><br/>
+
+            <label>3. Was the vehicle clean?</label><br/>
+            <input type="radio" name="q3" value="Yes" required> Yes
+            <input type="radio" name="q3" value="No"> No<br/><br/>
+
+            <label>4. How would you rate the driver (1-5)?</label><br/>
+            <select name="q4" required>
+                <option value="">Select</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select><br/><br/>
+
+            <label>5. Additional Comments:</label><br/>
+            <textarea name="q5" rows="3" cols="30" placeholder="Your feedback..."></textarea><br/><br/>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+
 <script src="my-ride.js"></script>
 </body>
-</html>
